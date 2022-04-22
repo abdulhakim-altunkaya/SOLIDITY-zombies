@@ -1,1 +1,30 @@
-*pragma version means solidity compiler version 
+★ pragma version means solidity compiler version 
+
+★ state variables are stored on the contract storage. Which means they are written to Ethereum blockchain. 
+
+★ uint = uint256 (256 bit unsigned integer)
+2 ** 5 means 2 to the power of 5 which means 2*2*2*2*2
+
+structs allow us to create more complex data types that can have multiple properties.
+Creating a struct array is useful, it will act like a database on the blockchain. 
+
+strings : arbitrary-length UTF-8 data.
+
+★ Function parameter variable names start with "_" as a convention. 
+private function names also start with "_" as a convention. 
+
+
+★ pure functions do not read and change any data on the blockchain. 
+view functions read data from the blockchain but do not change it. 
+
+★ keccak256 hashing function converts the input to a random 256 bit hexadecimal number. It expects
+a "bytes" data type input. For this reason we need to encode other data types.
+keccak256 can be used for cryptography and also for (almost)random number generation. 
+★
+★
+★
+★
+★
+★
+★
+★
