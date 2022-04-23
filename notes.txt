@@ -20,8 +20,16 @@ view functions read data from the blockchain but do not change it.
 ★ keccak256 hashing function converts the input to a random 256 bit hexadecimal number. It expects
 a "bytes" data type input. For this reason we need to encode other data types.
 keccak256 can be used for cryptography and also for (almost)random number generation. 
-★
-★
+
+★ " array.push() - 1; " returns length of the array of minus-1.
+It is the same as " array.length-1; "
+uint someIndex = myArray.push("apple") -1; //This will return the index number of the apple, as it is the last element.
+
+★ 
+THE ADDRESS OF AN ACCOUNT (IN ETHEREUM):
+Ethereum account = Bank account.
+Ethereum address = Bank account number
+Addresses are owned by users or smart contracts.
 ★
 ★
 ★
