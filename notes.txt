@@ -30,9 +30,17 @@ THE ADDRESS OF AN ACCOUNT (IN ETHEREUM):
 Ethereum account = Bank account.
 Ethereum address = Bank account number
 Addresses are owned by users or smart contracts.
-★
-★
-★
+
+★ 
+external    : NO main contract - YES inheriting+other contract
+public      : YES main+inheriting contract  - YES other contract
+internal    : YES main+inheriting contract - NO other contract
+private     : YES main contract - NO inheriting+other contract
+
+★ INTERFACE
+If we want to read data from a contract that we do not own (which we cannot inherit from), we can use interface.
+
+★ In Javascript a function can return only one value, In solidity a function can return multiple values.
 ★
 ★
 ★
