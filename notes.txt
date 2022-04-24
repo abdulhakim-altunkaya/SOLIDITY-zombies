@@ -37,10 +37,28 @@ public      : YES main+inheriting contract  - YES other contract
 internal    : YES main+inheriting contract - NO other contract
 private     : YES main contract - NO inheriting+other contract
 
-★ INTERFACE
-If we want to read data from a contract that we do not own (which we cannot inherit from), we can use interface.
+★ INTERFACE: If we want to read data from a contract that we do not own (which we cannot inherit from), we can use interface.
 
 ★ In Javascript a function can return only one value, In solidity a function can return multiple values.
-★
-★
-★
+
+★ GAS
+The creators of Ethereum wanted to make sure someone couldn't clog up the network with an infinite loop, 
+or hog all the network resources with really intensive computations. 
+So they made it so transactions aren't free, and users have to pay for computation time as well as storage.
+
+Normally there's no benefit to using these sub-types because Solidity reserves 256 bits of storage regardless of the uint size. 
+For example, using uint8 instead of uint (uint256) won't save you any gas. But there's an exception to this: inside structs.
+If you have multiple uints inside a struct, using a smaller-sized uint when possible will allow Solidity to pack 
+these variables together to take up less storage. 
+
+You'll also want to cluster identical data types together (i.e. put them next to each other in the struct) 
+so that Solidity can minimize the required storage space. 
+
+★NATIVE UNITS
+block.timestamp : returns current timestamp
+1 minutes       : 60
+1 hours         : 3600
+1 days          : 86400
+
+Hakım lıkes hıs flower Ruta but sometımes he ıs a donkey. 
+But he lıkes her a lotç You all should know ıt. Dont dıstur me. Now I am ın Lıthuanıa. And I love my flower a lot. 
