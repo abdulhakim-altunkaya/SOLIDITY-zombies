@@ -14,8 +14,11 @@ strings : arbitrary-length UTF-8 data.
 private function names also start with "_" as a convention. 
 
 
-★ pure functions do not read and change any data on the blockchain. 
-view functions read data from the blockchain but do not change it. 
+★ 
+PURE: functions do not read and change any data on the blockchain. 
+VIEW: functions read data from the blockchain but do not change it. 
+pure and view functions dont cost gas if they are called externally but they will cost gas 
+if they are called internally by another function (I am not sure if I understood this part)
 
 ★ keccak256 hashing function converts the input to a random 256 bit hexadecimal number. It expects
 a "bytes" data type input. For this reason we need to encode other data types.
@@ -63,7 +66,12 @@ block.timestamp : returns current timestamp
 Hakım lıkes hıs flower Ruta but sometımes he ıs a donkey. 
 But he lıkes her a lotç You all should know ıt. Dont dıstur me. Now I am ın Lıthuanıa. And I love my flower a lot. 
 
-★
-★
-★
+★ calldata is similar to memory but it is only available to external functions. 
+
+★ memory arrays must be created with a length argument: uint[] memory values = new uint[](3);
+
+★ When you call an API function on a normal web server, you can't send US dollars along with your function call.
+
+But in Ethereum, because both the money (Ether), the data (transaction payload), and the contract code itself all live on Ethereum, 
+it's possible for you to call a function and pay money to the contract at the same time.
 ★
