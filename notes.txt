@@ -63,6 +63,9 @@ block.timestamp : returns current timestamp
 1 hours         : 3600
 1 days          : 86400
 
+uint8 = 256 max
+uint16 = 65536 max
+
 Hakım lıkes hıs flower Ruta but sometımes he ıs a donkey. 
 But he lıkes her a lotç You all should know ıt. Dont dıstur me. Now I am ın Lıthuanıa. And I love my flower a lot. 
 
