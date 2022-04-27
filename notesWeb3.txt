@@ -1,0 +1,23 @@
+★ WEB3
+
+JavaScript library from the Ethereum Foundation.
+
+If we do not use Web3.js, we will write send information request to a Ethereum node in this way:
+{"jsonrpc":"2.0","method":"eth_sendTransaction",
+    "params":[{"from":"0xb60e8dd61c5d32be8058bb8eb970870f07233155","to":"0xd46e8dd67c5d32be8058bb8eb970870f07244567",
+    "gas":"0x76c0","gasPrice":"0x9184e72a000","value":"0x9184e72a",
+    "data":"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],"id":1}
+
+But thanks to Web3, the above query can be simplified like this:
+CryptoZombies.methods.createRandomZombie("Vitalik Nakamoto 🤔").send({ from: "0xb60e8dd61c5d32be8058bb8eb970870f07233155", 
+    gas: "3000000" })
+
+★ To use the Web3: 
+    Go to root of the project on CMD any type "npm install web3". You need to have node.js already installed on your computer.
+
+OR on your index.html, add this:
+<script language="javascript" type="text/javascript" src="web3.min.js"></script>
+
+★ To access Ethereum nodes, you can use Infura company services. 
+★ 
+★ 
