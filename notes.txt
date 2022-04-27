@@ -93,8 +93,43 @@ it will return to "0". In other words, If you add more to 11111111 it will reset
 
 To overcome this issue, we can use a library called "Safemath" developed by OpenZeppelin. 
 A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types.
+SafeMath library is by default for uint256. If you want to use SafeMath for uint8, uint16 etc, then also import relevant SafeMath library.
+
+import "./safemath.sol";
+contract A {
+    using SafeMath for uint256;
+    using SafeMath16 for uint16;
+}
+
+Inside the imported safemath contract, there are two libraries: SafeMath and SafeMath16. You can expand this file as much as you want.
 
 
 ★  BURNING A TOKEN:...to make sure users don't accidentally transfer their zombies to 
 address 0 (which is called "burning" a token — basically  it's sent to an address that no 
 one has the private key of, essentially making it unrecoverable).
+
+★  NATSPEC COMMENTING CONVENTION
+
+@notice explains to a user what the contract / function does. @dev is for explaining extra details to developers.
+
+@param and @return are for describing what each parameter and return value of a function are for.
+/// @title A contract for basic math operations
+/// @author H4XF13LD MORRIS 💯💯😎💯💯
+/// @notice For now, this contract just adds a multiply function
+contract Math {
+  /// @notice Multiplies 2 numbers together
+  /// @param x the first uint.
+  /// @param y the second uint.
+  /// @return z the product of (x * y)
+  /// @dev This function does not currently check for overflows
+  function multiply(uint x, uint y) returns (uint z) {
+    // This is just a normal comment, and won't get picked up by natspec
+    z = x * y;
+  }
+}
+★ 
+★ 
+★ 
+★ 
+★ 
+★ 
