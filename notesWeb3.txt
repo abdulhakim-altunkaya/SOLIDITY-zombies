@@ -18,6 +18,55 @@ CryptoZombies.methods.createRandomZombie("Vitalik Nakamoto 🤔").send({ from: "
 OR on your index.html, add this:
 <script language="javascript" type="text/javascript" src="web3.min.js"></script>
 
-★ To access Ethereum nodes, you can use Infura company services. 
-★ 
-★ 
+To access Ethereum nodes, you can use Infura company services. Not sure if I understand this step much.
+
+★ Then add metamask related code to your index.html
+
+★ Then we will need to add the contract address and contract ABI to our index.html
+we will get contract once we deploy it to Ethereum.
+ABI: Application Binary Interface is a file that contains the functions of our contracts. It is in JSON format. ABI tells
+web3 how to interact with our contract functions. We get this ABI code, once we deploy our contract to Ethereum mainnet. 
+The solidity compiler will provide us this code. We will then copy it and save it in a file with ".js" extension. 
+Then include it in your index.html 
+
+★ CALL and SEND FUNCTIONS 
+
+call is used for view and pure functions. It only runs on the local node, and won't create a transaction on the blockchain.
+myContract.methods.myMethod(123).call()
+
+send will create a transaction and change data on the blockchain. You'll need to use send for any functions that aren't view or pure.
+    example: myContract.methods.myMethod(123).send()
+
+MORE ON SEND FUNCTION:
+There will be a significant delay from when the user sends a transaction and when that transaction 
+actually takes effect on the blockchain. This is because we have to wait for the transaction to be 
+included in a block, and the block time for Ethereum is on average 15 seconds. If there are a lot of 
+pending transactions on Ethereum or if the user sends too low of a gas price, our transaction may 
+have to wait several blocks to get included, and this could take minutes.
+
+So, we will use two more functions with send(): receipt() and error()
+receipt will fire when the transaction is included into a block on Ethereum, which means our zombie 
+has been created and saved on our contract error will fire if there's an issue that prevented the 
+transaction from being included in a block, such as the user not sending enough gas. 
+We'll want to inform the user in our UI that the transaction didn't go through so they can try again.
+
+EXAMPLE ON INDEX.HTML:
+
+function getZombieDetails(id) {
+  return cryptoZombies.methods.zombies(id).call()
+}
+
+// Call the function and do something with the result:
+getZombieDetails(15)
+.then(function(result) {
+  console.log("Zombie 15: " + JSON.stringify(result));
+});
+
+cryptoZombies.methods.zombies(id).call() will communicate with the Web3 provider node and tell it 
+to return the zombie with index id from Zombie[] public zombies on our contract. As our zombies mapping is public
+we can use it like a function (..."zombies(id)"...)
+
+Note that this is asynchronous, like an API call to an external server. So Web3 returns a promise here.
+
+Once the promise resolves (which means we got an answer back from the web3 provider), our example code
+ continues with the then statement, which logs result to the console.
