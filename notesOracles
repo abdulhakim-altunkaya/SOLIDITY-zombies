@@ -1,0 +1,10 @@
+DECENTRALIZED ORACLE NETWORK
+DECENTRALIZED DATA SOURCE
+
+centralized oracle network: our javascript API
+centralized data source: binance api on cryptoprices
+
+Chainlink, which is a decentralized oracle network, feeds data to a contract on the blockchain. 
+Then we are accessing this data by reading from this smart contract.
+Chainlink uses a "off-chain" mechanism to provide data to the smart contract. The data gathering
+is using a consensus mechanism.

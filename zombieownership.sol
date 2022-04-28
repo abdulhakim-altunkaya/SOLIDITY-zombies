@@ -4,13 +4,10 @@ import "./zombieattack.sol";
 import "./erc721.sol";
 import "./safemath.sol";
 
-// @title A contract that manages zombie ownership
-// @author Abdulhakim Altunkaya
 contract ZombieOwnership is ZombieAttack, ERC721 {
 
   using SafeMath for uint256;
 
-  //@dev mapping approved accounts to claim erc721 token
   mapping (uint => address) zombieApprovals;
 
   function balanceOf(address _owner) external view returns (uint256) {
@@ -29,13 +26,13 @@ contract ZombieOwnership is ZombieAttack, ERC721 {
   }
 
   function transferFrom(address _from, address _to, uint256 _tokenId) external payable {
-    require (zombieToOwner[_tokenId] == msg.sender || zombieApprovals[_tokenId] == msg.sender);
-    _transfer(_from, _to, _tokenId);
-  }
+      require (zombieToOwner[_tokenId] == msg.sender || zombieApprovals[_tokenId] == msg.sender);
+      _transfer(_from, _to, _tokenId);
+    }
 
   function approve(address _approved, uint256 _tokenId) external payable onlyOwnerOf(_tokenId) {
-    zombieApprovals[_tokenId] = _approved;
-    emit Approval(msg.sender, _approved, _tokenId);
-  }
+      zombieApprovals[_tokenId] = _approved;
+      emit Approval(msg.sender, _approved, _tokenId);
+    }
 
 }
