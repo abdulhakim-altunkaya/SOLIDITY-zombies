@@ -1,0 +1,12 @@
+★ ★ ★ ★ ★ 
+Every time you compile a smart contract, the Solidity compiler 
+generates a JSON file (referred to as build artifacts) which contains 
+the binary representation of that contract and saves it in the build/contracts folder.
+
+Next, when you run a migration, Truffle updates this file with the 
+information related to that network.
+
+//const MyAwesomeContract = artifacts.require(“MyAwesomeContract”);
+The function above returns something called a contract abstraction. In a nutshell, a contract 
+abstraction hides the complexity of interacting with Ethereum and provides a convenient 
+JavaScript interface to our Solidity smart contract. We'll be using it in the next chapters.

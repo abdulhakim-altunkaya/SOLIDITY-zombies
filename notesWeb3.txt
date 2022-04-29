@@ -71,6 +71,7 @@ Note that this is asynchronous, like an API call to an external server. So Web3 
 Once the promise resolves (which means we got an answer back from the web3 provider), our example code
  continues with the then statement, which logs result to the console.
 
+★ ★ ★ ★ 
 EVENTS
 To return event values, you can follow an example like this:
 
@@ -92,3 +93,4 @@ cryptoZombies.events.Transfer({ filter: { _to: userAccount } })
   // The current user just received a zombie!
   // Do something here to update the UI to show it
 }).on("error", console.error);
+

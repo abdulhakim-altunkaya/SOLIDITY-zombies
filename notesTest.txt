@@ -1,0 +1,19 @@
+★ ★ ★ ★ 
+The contract() function
+Behind the scenes, Truffle adds a thin wrapper around Mocha in order to make testing simpler. 
+
+group tests by calling a function named contract(). It extends Mocha's describe() by providing a list 
+of accounts for testing and doing some cleanup as well.
+
+contract() takes two arguments. The first one, a string, must indicate what we’re going to test. 
+The second parameter, a callback, is where we’re going to actually write our tests.
+
+execute them: the way we’ll be doing this is by calling a function named it() which also takes 
+two arguments: a string that describes what the test actually does and a callback.
+
+Putting it together, here's a bare-bones test:
+
+ contract("MyAwesomeContract", (accounts) => {
+   it("should be able to receive Ethers", () => {
+   })
+ })
