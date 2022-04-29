@@ -1,6 +1,8 @@
-pragma solidity >=0.5.0 <0.6.0;
+//SPDX-License-Identifier: GPL-3.0
 
-contract ERC721 {
+pragma solidity >=0.5.0;
+
+abstract ERC721 {
   event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
   event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId);
 
