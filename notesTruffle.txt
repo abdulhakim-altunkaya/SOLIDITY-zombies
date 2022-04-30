@@ -10,3 +10,9 @@ information related to that network.
 The function above returns something called a contract abstraction. In a nutshell, a contract 
 abstraction hides the complexity of interacting with Ethereum and provides a convenient 
 JavaScript interface to our Solidity smart contract. We'll be using it in the next chapters.
+
+★ ★ ★ ★ ★ 
+Ganache sets up a local Ethereum network.
+
+Every time Ganache starts, it creates 10 test accounts and gives them 100 Ethers to make 
+testing easier. Ganache and Truffle are tightly integrated
